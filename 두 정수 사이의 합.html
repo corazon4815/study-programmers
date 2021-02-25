@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    solution(3,5);
+    let sum = 0;
+    let min;
+    let max;
+    
+ function solution(a, b) {
+    if(a === b){
+        return a;
+    }
+ 
+    if(a > b){
+     min = b;
+     max = a;
+    }else{
+     min = a;
+     max = b;
+ }
+    
+for(let i = min; i <= max; i++){
+    sum += i
+}
+
+    return sum;
+}
+</script>
+
+</body>
+</html>

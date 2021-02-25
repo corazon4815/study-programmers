@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    solution(3);
+function solution(n) {
+    let i = 0;
+    let answer = '';
+    while (i<n){
+        if(i%2 == 0){
+            answer +="수"
+        }else{
+            answer +="박"
+        }
+        i++
+    }
+    console.log(answer)
+    return answer;
+}
+
+</script>
+
+</body>
+</html>

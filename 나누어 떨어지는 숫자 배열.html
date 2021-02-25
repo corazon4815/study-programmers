@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    solution([5, 9, 7, 10],5);
+    function solution(arr, divisor) {
+    let result= [];
+    for(let i =0; i<arr.length; i++){
+        if(arr[i]%divisor==0){
+            result.push(arr[i]);
+            };
+    }
+    return result.length!=0?result.sort((a,b) => a - b) : result=[-1];
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    solution("try hello world");
+    function solution(s) {
+   let answer = "";
+   let flag = "";
+
+   for(let i = 0; i<s.length; i++){
+       if(s.charAt(i) == " "){
+           answer+=" ";
+           flag = "even";
+       }else if(flag == "odd"){
+          answer+=(s.charAt(i)).toLowerCase();
+           flag = "even"
+       }else {
+           answer+=(s.charAt(i)).toUpperCase();
+           flag = "odd"
+       }
+   }
+   return answer;
+}
+</script>
+
+</body>
+</html>

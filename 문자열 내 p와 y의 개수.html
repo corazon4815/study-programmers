@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+    solution("pPoooyY");
+    function solution(s){
+
+if(!s) return true;
+
+s = s.toUpperCase(s);
+
+  var p = s.match(/P/g);
+  var y = s.match(/Y/g);
+  console.log(p.length == y.length)
+return p.length == y.length;
+}
+</script>
+
+</body>
+</html>
