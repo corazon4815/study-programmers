@@ -26,25 +26,25 @@
             sArr.indexOf(aArr[i])!=-1? 
 
         //응 소문자에있어근데
-            ((sArr.indexOf(aArr[i])+n)%25==0&&(sArr.indexOf(aArr[i])+n)!=25? 
+            
             //응 넘어
-            sArr[(sArr.indexOf(aArr[i])+n)%25] :
+            sArr[(sArr.indexOf(aArr[i])+n)%25+Math.floor((sArr.indexOf(aArr[i])+n)/25)] :
             //안넘어 
-            sArr[sArr.indexOf(aArr[i])%26+n])
+            
             
             
         // 대문자에 있어 근데
-        :
-        ((lArr.indexOf(aArr[i])+n)%25==0&&(lArr.indexOf(aArr[i])+n)!=25?
+        
+        
             //응 넘어
-            lArr[(lArr.indexOf(aArr[i])+n)%25] :
+            lArr[(lArr.indexOf(aArr[i])+n)%25+Math.floor((lArr.indexOf(aArr[i])+n)/25)] 
             //안넘어 
-            lArr[lArr.indexOf(aArr[i])%25+n])
+            
             
        
             )
         
-    console.log((sArr.indexOf(aArr[i])+n))    
+    console.log(Math.floor((sArr.indexOf(aArr[i])+n)/25))    
        // answer.push(sArr.indexOf(aArr[i])!=-1?(sArr.indexOf(sArr.indexOf(aArr[i])+n>25?sStr[sArr.indexOf(aArr[i])+n-25]:sStr[sArr.indexOf(aArr[i])+n])):(lArr.indexOf(aArr[i]+n)>25?lStr[i+n-25]:lStr[i+n]))
         
     }
