@@ -6,52 +6,24 @@
 </head>
 <body>
 <script>
-    solution("z",1);
+    solution("a B z",4);
     function solution(s, n) {
-    let sStr = "abcdefghijklmnopqrstuvwxyz";
-    let lStr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    let sArr = sStr.split("");
-    let lArr = lStr.split("");
-    let aArr = s.split(""); 
-    let answer = [];
-    for(let i = 0; i<aArr.length; i++){
-        //console.log(sArr)
-        //console.log(sArr.indexOf(aArr[i])); //-1  0 -1 25 
-        //console.log(sArr.indexOf(sArr.indexOf(aArr[i]+n)));
-        if(aArr[i]==" "){
-            answer.push(" ");
-            continue;
-        }
-        answer.push(
-            sArr.indexOf(aArr[i])!=-1? 
+    let result =[];
 
-        //응 소문자에있어근데
-            
-            //응 넘어
-            sArr[(sArr.indexOf(aArr[i])+n)%25+Math.floor((sArr.indexOf(aArr[i])+n)/25)] :
-            //안넘어 
-            
-            
-            
-        // 대문자에 있어 근데
-        
-        
-            //응 넘어
-            lArr[(lArr.indexOf(aArr[i])+n)%25+Math.floor((lArr.indexOf(aArr[i])+n)/25)] 
-            //안넘어 
-            
-            
-       
-            )
-        
-    console.log(Math.floor((sArr.indexOf(aArr[i])+n)/25))    
-       // answer.push(sArr.indexOf(aArr[i])!=-1?(sArr.indexOf(sArr.indexOf(aArr[i])+n>25?sStr[sArr.indexOf(aArr[i])+n-25]:sStr[sArr.indexOf(aArr[i])+n])):(lArr.indexOf(aArr[i]+n)>25?lStr[i+n-25]:lStr[i+n]))
-        
+    for(let i =0; i<s.length; i++){
+        let charNum = s.charCodeAt(i);
+
+        if(charNum>=65 &&charNum<=90){
+                result.push(String.fromCharCode(charNum + n <= 90 ? charNum+n : charNum + n % 26 - 26));
+            }else if(s.charAt(i)!==" "){
+                result.push(String.fromCharCode(charNum + n <= 122 ? charNum + n : charNum + n % 26 - 26));
+            }else{
+                result.push(" ");
+            }
+        }
+        return result.join("");
     }
-    
-    console.log(answer.join(""))
-    return answer.join("");
-    }
+
 </script>
 
 </body>
