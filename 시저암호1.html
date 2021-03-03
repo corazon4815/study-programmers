@@ -14,7 +14,7 @@
         let charNum = s.charCodeAt(i);
 
         if(charNum>=65 &&charNum<=90){
-                result+= String.fromCharCode(charNum + n <= 90 ? charNum+n : charNum + n % 26 - 26);
+                result+= String.fromCharCode(charNum + n <= 90 ? charNum + n : charNum + n % 26 - 26);
             }else if(s.charAt(i)!==" "){
                 result+=String.fromCharCode(charNum + n <= 122 ? charNum + n : charNum + n % 26 - 26);
             }else{
