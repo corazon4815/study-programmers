@@ -8,20 +8,22 @@
 <script>
     solution("a B z",4);
     function solution(s, n) {
-    let result =[];
+    let result ="";
 
     for(let i =0; i<s.length; i++){
         let charNum = s.charCodeAt(i);
 
         if(charNum>=65 &&charNum<=90){
-                result.push(String.fromCharCode(charNum + n <= 90 ? charNum+n : charNum + n % 26 - 26));
+                result+= String.fromCharCode(charNum + n <= 90 ? charNum+n : charNum + n % 26 - 26);
             }else if(s.charAt(i)!==" "){
-                result.push(String.fromCharCode(charNum + n <= 122 ? charNum + n : charNum + n % 26 - 26));
+                result+=String.fromCharCode(charNum + n <= 122 ? charNum + n : charNum + n % 26 - 26);
             }else{
-                result.push(" ");
+                result+=" ";
             }
         }
-        return result.join("");
+        console.log(result)
+        return result;
+        
     }
 
 </script>
