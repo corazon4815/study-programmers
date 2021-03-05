@@ -6,25 +6,38 @@
 </head>
 <body>
 <script>
-    let solution  = (n, l, r) => {
-        let i =0;
-        while(i<r.length){
-            if(l.indexOf(r[i])>-1){
-                l.splice(l.indexOf(r[i]),1)
-                i++;
-            }else if(l.indexOf(r[i]+1)>-1){
-                l.splice(l.indexOf(r[i]+1),1)
-                i++;
-            }else if(l.indexOf(r[i]-1)>-1){
-                l.splice(indexOf(r[i]-1),1)
-                i++;
+    //잃어버린 학생
+    //여벌이 있는 학생에서 -1을 했는데 잃어버린 학생 그룹에 있다? 그 번호 제거
+    //+1을 했는데 잃어버린 학생 그룹에 있다? 그학생 제거 
+    let solution  = (n, lost, reserve) => {
+        let l = lost.sort();
+        let r = reserve.sort();
+        let newR = [...reserve];
+        let i = 0;
+        let j = 0;
+        while(i<newR.length){
+            if(l.indexOf(newR[i])>-1){
+                l.splice(l.indexOf(newR[i]),1)
+                r.splice(r.indexOf(newR[i]),1)
+                i++;     
             }else{
-                i++
+                i++;
+            }
+        }
+        while(j<r.length){        
+            if(l.indexOf(r[j]-1)>-1){
+                l.splice(l.indexOf(r[j]-1),1)
+                j++;
+            }else if(l.indexOf(r[j]+1)>-1){
+                l.splice(l.indexOf(r[j]+1),1)
+                j++;
+            }else{
+                j++
             }
         }
         return n-l.length
     };
-solution(5,[2,4],[1,3,5]);
+solution( 5,[1,2,3],[2,3,4]);
 </script>
 
 </body>
