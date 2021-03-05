@@ -17,8 +17,8 @@
         let j = 0;
         while(i<newR.length){
             if(l.indexOf(newR[i])>-1){
-                l.splice(l.indexOf(newR[i]),1)
-                r.splice(r.indexOf(newR[i]),1)
+                l.splice(l.indexOf(newR[i]),1);
+                r.splice(r.indexOf(newR[i]),1);
                 i++;     
             }else{
                 i++;
@@ -26,16 +26,16 @@
         }
         while(j<r.length){        
             if(l.indexOf(r[j]-1)>-1){
-                l.splice(l.indexOf(r[j]-1),1)
+                l.splice(l.indexOf(r[j]-1),1);
                 j++;
             }else if(l.indexOf(r[j]+1)>-1){
-                l.splice(l.indexOf(r[j]+1),1)
+                l.splice(l.indexOf(r[j]+1),1);
                 j++;
             }else{
                 j++
             }
         }
-        return n-l.length
+        return n-l.length;
     };
 solution( 5,[1,2,3],[2,3,4]);
 
