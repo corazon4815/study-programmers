@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+ let solution  = (a, b) => {
+    let answer = 0;
+    for(let i = 0; i<a.length; i++){
+        for(let j = 0; j<b.length; j++){
+            if(i===j){
+                answer+=a[i]*b[j];
+            }else{
+                continue;
+            }
+        }
+    }
+    return answer;
+}
+    solution([-1, 0, 1], [1, 0, -1]);
+
+</script>
+</body>
+</html>
