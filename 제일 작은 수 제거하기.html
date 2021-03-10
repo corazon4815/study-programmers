@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<title>프로그래머스</title>
+<meta charset="utf-8">
+</head>
+<body>
+<script>
+ let solution  = arr => {
+    if(arr.length === 1){
+         return [-1];
+     }
+    let answer = [...arr];
+    answer.sort((a, b) => a - b);
+    return arr.filter( x => x !== answer[0]);
+}
+    
+
+
+solution([5, 1, 2, 6, 8]); //[5, 2, 6, 8]
+
+// function solution(arr) {
+//     arr.splice(arr.indexOf(Math.min(...arr)), 1);
+//     return !arr.length ? [-1] : arr;
+// }
+
+
+</script>
+</body>
+</html>
+
+
